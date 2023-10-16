@@ -1,0 +1,74 @@
+<template>
+    <form @submit.prevent>
+        <h4>Изменение карточки продукта</h4>
+        <my-input
+            class="my-input"
+            v-model="product.title"
+            type="text"
+            placeholder="Название"
+        />
+        <my-input
+            class="my-input"
+            v-model="product.price"
+            type="number" 
+            step="any"
+            min="0"
+            placeholder="Цена"
+        />
+        <my-input
+            class="my-input"
+            v-model="product.description"
+            type="text"
+            placeholder="Описание"
+        />
+        <my-input
+            class="my-input"
+            v-model="product.category"
+            type="text"
+            placeholder="Категория"
+        />
+        <my-input
+            class="my-input"
+            v-model="product.rating.rate"
+            type="number"
+            step="0.1"
+            min="0"
+            max="5"
+            placeholder="Оценка"
+        />
+        <my-button
+            @click="updateProduct"
+            style="align-self: flex-end; margin-top: 15px;"
+            >
+            Сохранить
+        </my-button>
+    </form>
+</template>
+
+<script>
+    export default {
+        name: 'edit-product-form',
+        props: {
+            product: {
+                type: Object, 
+                required: true
+            }
+        },
+        methods: {
+            updateProduct() {
+                this.$emit('update', this.product)
+            }
+        }
+    }
+</script>
+
+<style scoped>
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .my-input {
+        margin-top: 15px;
+    }
+</style>
