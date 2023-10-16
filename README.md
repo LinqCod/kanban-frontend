@@ -1,19 +1,19 @@
-# vue-lessons
+# Kanban Service Frontend
 
-## Project setup
-```
-npm install
-```
+Kanban system for managing products
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Старт приложения
 
-### Compiles and minifies for production
+1. Клонируем репозиторий проекта:
 ```
-npm run build
+git clone https://github.com/LinqCod/kanban-frontend.git
 ```
+2. Дальше необходимо запустить само приложение. Для этого потребуется установленный `vue3`, а также `npm`.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Команды
+
+Для запуска приложения достаточно использовать следующую команду, которая сбилдит и запустит приложение, доступное на порту 8081:
+
+```
+npm run serve -- --port 8081
+```
