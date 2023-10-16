@@ -6,7 +6,7 @@
             <div><strong>Цена:</strong> {{ product.price }} </div>
             <div><strong>Описание:</strong> {{ product.description }} </div>
             <div><strong>Категория:</strong> {{ product.category }} </div>
-            <div><strong>Оценка:</strong> {{ product.rating.rate }} </div>
+            <div><strong>Оценка:</strong> {{ product.rate }} </div>
         </div>
         <div class="product_btns">
             <my-button

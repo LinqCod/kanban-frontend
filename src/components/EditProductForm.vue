@@ -29,7 +29,7 @@
         />
         <my-input
             class="my-input"
-            v-model="product.rating.rate"
+            v-model="product.rate"
             type="number"
             step="0.1"
             min="0"

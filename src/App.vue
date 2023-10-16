@@ -125,9 +125,7 @@
                     price: 0,
                     description: '',
                     category: '',
-                    rating: {
-                        rate: 0
-                    },
+                    rate: 0,
                     listName: ''
                 },
                 formType: '',
@@ -170,7 +168,7 @@
             async fetchProducts() {
                 try {
                     this.isProductsLoading = true;
-                    const response = await axios.get('https://fakestoreapi.com/products?limit=10');
+                    const response = await axios.get('http://localhost:8080/api/v1/products');
                     this.products = response.data.map(obj => ({ ...obj, listName: 'raw' }));
                 } catch(e) {
                    alert('Ошибка получения данных с апишки') 
@@ -183,13 +181,13 @@
                 switch(sortOrder) {
                     case 'rateAsc':
                         return pr.sort((p1, p2) => {
-                            return p1['rating']['rate'] < p2['rating']['rate'] ? -1 :
-                                p1['rating']['rate'] > p2['rating']['rate'] ? 1 : 0; 
+                            return p1['rate'] < p2['rate'] ? -1 :
+                                p1['rate'] > p2['rate'] ? 1 : 0; 
                         });
                     case 'rateDesc':
                         return pr.sort((p1, p2) => {
-                            return p1['rating']['rate'] > p2['rating']['rate'] ? -1 :
-                                p1['rating']['rate'] < p2['rating']['rate'] ? 1 : 0; 
+                            return p1['rate'] > p2['rate'] ? -1 :
+                                p1['rate'] < p2['rate'] ? 1 : 0; 
                         });
                 }
                 

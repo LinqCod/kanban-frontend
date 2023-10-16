@@ -29,7 +29,7 @@
         />
         <my-input
             class="my-input"
-            v-model="product.rating.rate"
+            v-model="product.rate"
             type="number"
             step="0.1"
             min="0"
@@ -60,9 +60,7 @@
                     price: 0,
                     description: '',
                     category: '',
-                    rating: {
-                        rate: 0
-                    },
+                    rate: 0,
                     listName: ''
                 }
             }
@@ -77,9 +75,7 @@
                     price: 0,
                     description: '',
                     category: '',
-                    rating: {
-                        rate: 0
-                    },
+                    rate: 0,
                     listName: ''
                 }
             }
